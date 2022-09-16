@@ -5,8 +5,10 @@ import { FakeWalletAdapter } from '@solana/wallet-adapter-wallets';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-phantom';
 import { clusterApiUrl } from '@solana/web3.js';
 import React, { FC, ReactNode, useMemo } from 'react';
+import AppLayout from './layouts/AppLayout';
+import { GradientBorderBox } from './components/GradientBorderBox';
 
-require('./App.css');
+require('./App.scss');
 require('@solana/wallet-adapter-react-ui/styles.css');
 
 const App: FC = () => {
@@ -36,7 +38,7 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
              * your users connect to will be loaded.
              */
             new FakeWalletAdapter(),
-            new PhantomWalletAdapter()
+            new PhantomWalletAdapter(),
         ],
         []
     );
@@ -44,16 +46,14 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
     return (
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={wallets} autoConnect>
-                <WalletModalProvider>{children}</WalletModalProvider>
+                <WalletModalProvider>
+                    <AppLayout>{children} </AppLayout>
+                </WalletModalProvider>
             </WalletProvider>
         </ConnectionProvider>
     );
 };
 
 const Content: FC = () => {
-    return (
-        <div className="App">
-            <WalletMultiButton />
-        </div>
-    );
+    return <div className="App"></div>;
 };
