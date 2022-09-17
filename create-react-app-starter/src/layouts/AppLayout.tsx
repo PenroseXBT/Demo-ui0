@@ -38,7 +38,7 @@ const AppLayout: React.FC<any> = ({ children }) => {
                 }
                 styles={(theme) => ({
                     main: {
-                        backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+                        backgroundColor: '#1C2442',
                         [`@media (max-width: ${theme.breakpoints.md}px)`]: {
                             paddingLeft: 12,
                         },

@@ -7,6 +7,8 @@ import { clusterApiUrl } from '@solana/web3.js';
 import React, { FC, ReactNode, useMemo } from 'react';
 import AppLayout from './layouts/AppLayout';
 import { GradientBorderBox } from './components/GradientBorderBox';
+import PageWrapper from 'src/wrappers/PageWrapper';
+import UltraDashboardContainer from 'src/containers/dashboard';
 
 require('./App.scss');
 require('@solana/wallet-adapter-react-ui/styles.css');
@@ -55,5 +57,5 @@ const Context: FC<{ children: ReactNode }> = ({ children }) => {
 };
 
 const Content: FC = () => {
-    return <div className="App"></div>;
+    return <UltraDashboardContainer />;
 };
