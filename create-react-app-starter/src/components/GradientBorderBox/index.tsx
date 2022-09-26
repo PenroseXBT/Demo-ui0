@@ -1,11 +1,17 @@
 require('./gradient.scss');
 
-export const GradientBorderBox: React.FC<any> = ({ borderWidth, children }) => {
+export const GradientBorderBox: React.FC<any> = ({
+    borderWidth,
+    children,
+    extraClasses,
+    extraClassesOuter,
+    extraClassesInner,
+}) => {
     return (
-        <div className="gradient-container">
-            <div className="gradient-outer"></div>
+        <div className={`gradient-container ${extraClasses}`}>
+            <div className={`gradient-outer ${extraClassesOuter}`}></div>
 
-            <div className="gradient-inner">{children}</div>
+            <div className={`gradient-inner ${extraClassesInner}`}>{children}</div>
         </div>
     );
 };

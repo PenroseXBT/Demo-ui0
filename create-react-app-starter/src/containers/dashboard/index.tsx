@@ -5,10 +5,10 @@ import Image from 'next/image';
 import PageWrapper from 'src/wrappers/PageWrapper';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { useRouter } from 'next/router';
-import { GradientBorderBox } from 'src/components/GradientBorderBox';
 import { useStyles } from 'src/styles/components/dashboard.style';
-import { HorizontalSpacer, VerticleSpacer } from 'src/components/GradientSpacer';
-import { TitleChild } from 'src/components/TitleChild';
+import { DashboardOverview } from 'src/components/DashboardOverview';
+import { MarketOverview } from 'src/components/MarketOverview';
+import { SupplyMarketRow, TableContainer, BorrowMarketRow } from 'src/components/MarketTable';
 
 const UltraDashboardContainer = () => {
     const router = useRouter();
@@ -19,75 +19,80 @@ const UltraDashboardContainer = () => {
     return (
         <PageWrapper PageHeader={() => <></>} PageAction={() => null}>
             <Stack>
-                <GradientBorderBox>
-                    <Group className={classes.overviewContainer}>
-                        <Group className={classes.overviewInner}>
-                            <Stack className={classes.overviewHalf}>
-                                <TitleChild
-                                    title="Supply Rate"
-                                    className={classes.overviewSectionTitle}
-                                    stackClassName={classes.overviewSection}
-                                >
-                                    <Text className={classes.overviewSectionContent}>$0.00</Text>
-                                </TitleChild>
-                                <HorizontalSpacer />
+                <DashboardOverview />
+                <Text className={classes.sectionHeader}>Markets</Text>
+                <Group className={classes.marketsContainer}>
+                    <MarketOverview
+                        title="Market Overview"
+                        topLeftInfo={{
+                            title: 'Total Supply',
+                            value: '$0.00',
+                        }}
+                        bottomLeftInfo={{
+                            title: 'Total Staked',
+                            value: '$0.00',
+                        }}
+                        topRightInfo={{
+                            title: 'Total Locked',
+                            value: '$0.00',
+                        }}
+                        bottomRightInfo={{
+                            title: 'Total Borrowed',
+                            value: '$0.00',
+                        }}
+                    />
+                    <MarketOverview
+                        title="Balances"
+                        topLeftInfo={{
+                            title: 'Supply',
+                            value: '$0.00',
+                        }}
+                        bottomLeftInfo={{
+                            title: 'Staked',
+                            value: '$0.00',
+                        }}
+                        topRightInfo={{
+                            title: 'Borrow',
+                            value: '$0.00',
+                        }}
+                        bottomRightInfo={{
+                            title: 'Borrow Limit',
+                            value: '$0.00',
+                        }}
+                    />
+                    <MarketOverview
+                        title="APY"
+                        topLeftInfo={{
+                            title: 'Supply',
+                            value: '0.00%',
+                        }}
+                        bottomLeftInfo={{
+                            title: 'Staking',
+                            value: '0.00%',
+                        }}
+                        topRightInfo={{
+                            title: 'Borrow',
+                            value: '0.00%',
+                        }}
+                        bottomRightInfo={{
+                            title: 'Net APY',
+                            value: '0.00%',
+                        }}
+                    />
+                </Group>
+                <Group>
+                    <TableContainer
+                        tableItems={[<SupplyMarketRow />, <SupplyMarketRow />]}
+                        title="Supply Market"
+                        headers={['Asset', 'APY', 'Wallet', 'Collateral']}
+                    />
 
-                                <TitleChild
-                                    title="Borrow Rate"
-                                    className={classes.overviewSectionTitle}
-                                    stackClassName={classes.overviewSection}
-                                >
-                                    <Text className={classes.overviewSectionContent}>$0.00</Text>
-                                </TitleChild>
-                            </Stack>
-                            <Image
-                                width={196}
-                                height={196}
-                                layout="fixed"
-                                src="/images/core/overview-art.svg"
-                                alt="particles logo"
-                            />
-
-                            <Stack className={`${classes.overviewHalf} right`}>
-                                <TitleChild
-                                    title="Exchange Rate"
-                                    className={classes.overviewSectionTitle}
-                                    stackClassName={`${classes.overviewSection} right`}
-                                >
-                                    <Text className={classes.overviewSectionContent}>$0.00</Text>
-                                </TitleChild>
-                                <HorizontalSpacer />
-
-                                <TitleChild
-                                    title="Liquidation Threshhold"
-                                    className={classes.overviewSectionTitle}
-                                    stackClassName={`${classes.overviewSection} right`}
-                                >
-                                    <Text className={classes.overviewSectionContent}>$0.00</Text>
-                                </TitleChild>
-                            </Stack>
-                            <VerticleSpacer />
-
-                            <Stack className={`${classes.overviewHalf} outer`}>
-                                <TitleChild
-                                    title="Supply"
-                                    className={classes.overviewSectionTitle}
-                                    stackClassName={`${classes.overviewSection} outer`}
-                                >
-                                    <Text className={classes.overviewSectionContent}>$0.00</Text>
-                                </TitleChild>
-
-                                <TitleChild
-                                    title="Borrow Limit"
-                                    className={classes.overviewSectionTitle}
-                                    stackClassName={`${classes.overviewSection} outer`}
-                                >
-                                    <Text className={classes.overviewSectionContent}>$0.00</Text>
-                                </TitleChild>
-                            </Stack>
-                        </Group>
-                    </Group>
-                </GradientBorderBox>
+                    <TableContainer
+                        tableItems={[<BorrowMarketRow />, <BorrowMarketRow />]}
+                        title="Borrow Market"
+                        headers={['Asset', 'APY', 'Wallet', 'Liquidity']}
+                    />
+                </Group>
             </Stack>
         </PageWrapper>
     );
