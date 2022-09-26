@@ -1,0 +1,26 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wallet-adapter-button-trigger {
+
+	background: linear-gradient(90deg, #9945FF 0%, #14F195 100%);
+  border-radius: 15px !important;
+  height: 40px !important;
+}
+
+.horizontal-gradient-spacer {
+  width: 100%;
+  height: 1px;
+	background: linear-gradient(270deg, #9945FF 0%, #14F195 100%);
+}
+
+
+.verticle-gradient-spacer {
+  height: 100%;
+  width: 1px;
+	background: linear-gradient(180deg, #9945FF 0%, #14F195 100%);
+}
