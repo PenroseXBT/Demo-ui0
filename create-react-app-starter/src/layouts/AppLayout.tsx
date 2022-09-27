@@ -29,7 +29,7 @@ const AppLayout: React.FC<any> = ({ children }) => {
                 navbarOffsetBreakpoint="md"
                 asideOffsetBreakpoint="md"
                 fixed
-                padding="sm"
+                padding={0}
                 zIndex={0}
                 header={
                     <HeaderWrapper height={80}>
@@ -40,7 +40,7 @@ const AppLayout: React.FC<any> = ({ children }) => {
                     main: {
                         backgroundColor: '#1C2442',
                         [`@media (max-width: ${theme.breakpoints.md}px)`]: {
-                            paddingLeft: 12,
+                            paddingLeft: 0,
                         },
                     },
                 })}

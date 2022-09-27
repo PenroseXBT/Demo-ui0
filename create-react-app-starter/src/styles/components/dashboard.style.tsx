@@ -7,6 +7,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
         height: '280px',
         background: '#1C2442',
         borderRadius: '15px',
+        position: 'relative',
     },
     overviewInner: {
         background: 'linear-gradient(90deg, rgba(153, 69, 255, 0.1), rgba(20, 241, 49, 0.1) 100%)',

@@ -7,8 +7,11 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
         },
     },
     root: {
-        width: '1200px',
-        padding: '0px',
+        width: '100%',
+        padding: '0px 300px',
         maxWidth: '5000px',
+
+        backgroundSize: 'cover',
+        backgroundImage: 'url("https://file.rendit.io/n/KBa6J8X5hCXg0g5fIUjJ.svg")',
     },
 }));
