@@ -7,6 +7,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
         height: '280px',
         background: '#1C2442',
         borderRadius: '15px',
+        position: 'relative',
     },
     overviewInner: {
         background: 'linear-gradient(90deg, rgba(153, 69, 255, 0.1), rgba(20, 241, 49, 0.1) 100%)',
@@ -77,7 +78,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     marketTitle: {
         color: 'white',
         fontWeight: 700,
-        fontSize: '24px',
+        fontSize: '20px',
         fontFamily: 'Inter',
     },
     marketInner: {
@@ -102,7 +103,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     tableTitle: {
         color: 'white',
         fontWeight: 700,
-        fontSize: '24px',
+        fontSize: '20px',
         fontFamily: 'Inter',
         background: 'linear-gradient(90deg, #9945FF 0%, #14F195 100%)',
         paddingRight: '20px',

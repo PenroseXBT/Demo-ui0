@@ -20,7 +20,7 @@ const UltraDashboardContainer = () => {
         <PageWrapper PageHeader={() => <></>} PageAction={() => null}>
             <Stack>
                 <DashboardOverview />
-                <Text className={classes.sectionHeader}>Markets</Text>
+                <Text className={classes.sectionHeader}>TVL Markets</Text>
                 <Group className={classes.marketsContainer}>
                     <MarketOverview
                         title="Market Overview"
@@ -83,13 +83,13 @@ const UltraDashboardContainer = () => {
                 <Group>
                     <TableContainer
                         tableItems={[<SupplyMarketRow />, <SupplyMarketRow />]}
-                        title="Supply Market"
+                        title="Assets to supply"
                         headers={['Asset', 'APY', 'Wallet', 'Collateral']}
                     />
 
                     <TableContainer
                         tableItems={[<BorrowMarketRow />, <BorrowMarketRow />]}
-                        title="Borrow Market"
+                        title="Assets to borrow"
                         headers={['Asset', 'APY', 'Wallet', 'Liquidity']}
                     />
                 </Group>

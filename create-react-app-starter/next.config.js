@@ -11,9 +11,9 @@ module.exports = withTM({
     reactStrictMode: true,
     webpack5: true,
     images: {
-        loader: 'custom',
+        domains: ['file.rendit.io'],
     },
-    experimental: { esmExternals: false },
+    experimental: { esmExtewrnals: false },
     webpack: (config) => {
         config.resolve.fallback = {
             fs: false,
