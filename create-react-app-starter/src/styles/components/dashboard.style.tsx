@@ -78,7 +78,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     marketTitle: {
         color: 'white',
         fontWeight: 700,
-        fontSize: '24px',
+        fontSize: '20px',
         fontFamily: 'Inter',
     },
     marketInner: {
@@ -103,7 +103,7 @@ export const useStyles = createStyles((theme, _params, getRef) => ({
     tableTitle: {
         color: 'white',
         fontWeight: 700,
-        fontSize: '24px',
+        fontSize: '20px',
         fontFamily: 'Inter',
         background: 'linear-gradient(90deg, #9945FF 0%, #14F195 100%)',
         paddingRight: '20px',

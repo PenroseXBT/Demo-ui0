@@ -1,17 +1,17 @@
 export const HeaderOptions = [
   {
-    option: "Buy Particle",
+    option: "Defi",
     href: "!#",
     target: "",
   },
   {
     option: "Discord",
-    href: "http://dsc.gg/particles",
+    href: "http://dsc.gg/",
     target: "_blank",
   },
   {
     option: "Twitter",
-    href: "https://twitter.com/particlesnft",
+    href: "https://twitter.com/1UltraLabs",
     target: "_blank",
   },
   {
